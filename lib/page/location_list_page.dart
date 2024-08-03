@@ -9,64 +9,6 @@ import '../cubit/location_cubit.dart';
 import '../models/location_models.dart';
 import 'location_map_page.dart';
 
-// class LocationListScreen extends StatelessWidget {
-//   const LocationListScreen({super.key});
-
-//   @override
-//   Widget build(BuildContext context) {
-//     return Scaffold(
-//       appBar: AppBar(
-//         title: const Text('Pilih Lokasi Kantor'),
-//       ),
-//       body: BlocConsumer<LocationCubit, LocationState>(
-//         listener: (context, state) {
-//           if (state.permission == LocationPermission.denied) {
-//             ScaffoldMessenger.of(context).showSnackBar(
-//               const SnackBar(
-//                   content: Text('Izin lokasi diperlukan untuk aplikasi ini.')),
-//             );
-//           }
-//         },
-//         builder: (context, state) {
-//           return ListView.builder(
-//             itemCount: DummyData.locations.length,
-//             itemBuilder: (context, index) {
-//               LocationModel location = DummyData.locations[index];
-//               return ListTile(
-//                 trailing: ElevatedButton(
-//                     onPressed: () async {
-//                       Position userPosition =
-//                           await Geolocator.getCurrentPosition(
-//                               desiredAccuracy: LocationAccuracy.high);
-//                       double distanceInMeters = Geolocator.distanceBetween(
-//                         userPosition.latitude,
-//                         userPosition.longitude,
-//                         location.latitude,
-//                         location.longitude,
-//                       );
-//                       Navigator.push(
-//                         context,
-//                         MaterialPageRoute(
-//                           builder: (context) => LocationMapScreen(
-//                             location: location,
-//                             userPosition: LatLng(
-//                                 userPosition.latitude, userPosition.longitude),
-//                             distance: distanceInMeters,
-//                           ),
-//                         ),
-//                       );
-//                     },
-//                     child: const Text('Pilih Lokasi')),
-//                 title: Text(location.name),
-//               );
-//             },
-//           );
-//         },
-//       ),
-//     );
-//   }
-// }
-
 class LocationListScreen extends StatefulWidget {
   const LocationListScreen({super.key});
 
